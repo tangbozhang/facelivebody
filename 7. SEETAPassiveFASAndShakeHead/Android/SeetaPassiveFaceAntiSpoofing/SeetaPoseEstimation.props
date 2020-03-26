@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <PoseEstimationHome>$(SEETASDK_HOME)\PEv110</PoseEstimationHome>
+    <PoseEstimationName>VIPLPoseEstimation</PoseEstimationName>
+    <PoseEstimationVersion>110</PoseEstimationVersion>
+    <PoseEstimationDebugFuffix>d</PoseEstimationDebugFuffix>
+    <PoseEstimationLink>true</PoseEstimationLink>
+    <PoseEstimationCopy>true</PoseEstimationCopy>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="PoseEstimationHome">
+      <Value>$(PoseEstimationHome)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PoseEstimationName">
+      <Value>$(PoseEstimationName)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PoseEstimationVersion">
+      <Value>$(PoseEstimationVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PoseEstimationDebugFuffix">
+      <Value>$(PoseEstimationDebugFuffix)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PoseEstimationLink">
+      <Value>$(PoseEstimationLink)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PoseEstimationCopy">
+      <Value>$(PoseEstimationCopy)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(PoseEstimationHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(PoseEstimationLink)'=='true' AND '$(Configuration)'=='Debug'">
+    <Link>
+      <AdditionalLibraryDirectories>$(PoseEstimationHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(PoseEstimationName)$(PoseEstimationVersion)$(PoseEstimationDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(PoseEstimationLink)'=='true' AND '$(Configuration)'=='Release'">
+    <Link>
+      <AdditionalLibraryDirectories>$(PoseEstimationHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(PoseEstimationName)$(PoseEstimationVersion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(PoseEstimationCopy)'=='true' AND '$(Configuration)'=='Debug'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(PoseEstimationHome)\lib\$(PlatformTarget)\$(PoseEstimationName)$(PoseEstimationVersion)$(PoseEstimationDebugFuffix).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(PoseEstimationCopy)'=='true' AND '$(Configuration)'=='Release'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(PoseEstimationHome)\lib\$(PlatformTarget)\$(PoseEstimationName)$(PoseEstimationVersion).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

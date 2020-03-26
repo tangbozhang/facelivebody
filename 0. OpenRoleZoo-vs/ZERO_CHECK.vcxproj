@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0C1A8E9D-7C1F-3067-A085-5797E0CB870C}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ZERO_CHECK</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\2e42f4602c7bb5154c5f3362b968a252\generate.stamp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\softwareinstall\bin\cmake.exe -SC:/Users/TR/Desktop/0.OpenRoleZoo -BC:/Users/TR/Desktop/0.OpenRoleZoo-vs --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/TR/Desktop/0.OpenRoleZoo-vs/ORZ.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeCCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeCXXCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeRCCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeSystem.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\CMakeLists.txt;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\FLAGS_MSVC.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\LOCAL_ENV.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\LOCAL_FLAGS.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\src\CMakeLists.txt;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeRCInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\generate.stamp;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\softwareinstall\bin\cmake.exe -SC:/Users/TR/Desktop/0.OpenRoleZoo -BC:/Users/TR/Desktop/0.OpenRoleZoo-vs --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/TR/Desktop/0.OpenRoleZoo-vs/ORZ.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeCCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeCXXCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeRCCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeSystem.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\CMakeLists.txt;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\FLAGS_MSVC.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\LOCAL_ENV.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\LOCAL_FLAGS.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\src\CMakeLists.txt;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeRCInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\generate.stamp;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\softwareinstall\bin\cmake.exe -SC:/Users/TR/Desktop/0.OpenRoleZoo -BC:/Users/TR/Desktop/0.OpenRoleZoo-vs --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/TR/Desktop/0.OpenRoleZoo-vs/ORZ.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeCCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeCXXCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeRCCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeSystem.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\CMakeLists.txt;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\FLAGS_MSVC.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\LOCAL_ENV.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\LOCAL_FLAGS.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\src\CMakeLists.txt;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeRCInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\generate.stamp;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\softwareinstall\bin\cmake.exe -SC:/Users/TR/Desktop/0.OpenRoleZoo -BC:/Users/TR/Desktop/0.OpenRoleZoo-vs --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/TR/Desktop/0.OpenRoleZoo-vs/ORZ.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeCCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeCXXCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeRCCompiler.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\3.16.0-rc2\CMakeSystem.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\CMakeLists.txt;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\FLAGS_MSVC.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\LOCAL_ENV.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\cmake\LOCAL_FLAGS.cmake;C:\Users\TR\Desktop\0.OpenRoleZoo\src\CMakeLists.txt;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeRCInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;D:\softwareinstall\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\Windows.cmake;D:\softwareinstall\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo-vs\CMakeFiles\generate.stamp;C:\Users\TR\Desktop\0.OpenRoleZoo-vs\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

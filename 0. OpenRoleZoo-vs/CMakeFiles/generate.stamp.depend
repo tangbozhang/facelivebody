@@ -1,0 +1,26 @@
+# CMake generation dependency list for this directory.
+C:/Users/TR/Desktop/0.OpenRoleZoo-vs/CMakeFiles/3.16.0-rc2/CMakeCCompiler.cmake
+C:/Users/TR/Desktop/0.OpenRoleZoo-vs/CMakeFiles/3.16.0-rc2/CMakeCXXCompiler.cmake
+C:/Users/TR/Desktop/0.OpenRoleZoo-vs/CMakeFiles/3.16.0-rc2/CMakeRCCompiler.cmake
+C:/Users/TR/Desktop/0.OpenRoleZoo-vs/CMakeFiles/3.16.0-rc2/CMakeSystem.cmake
+C:/Users/TR/Desktop/0.OpenRoleZoo/CMakeLists.txt
+C:/Users/TR/Desktop/0.OpenRoleZoo/cmake/FLAGS_MSVC.cmake
+C:/Users/TR/Desktop/0.OpenRoleZoo/cmake/LOCAL_ENV.cmake
+C:/Users/TR/Desktop/0.OpenRoleZoo/cmake/LOCAL_FLAGS.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeCInformation.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeCXXInformation.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeGenericSystem.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeRCInformation.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/Compiler/MSVC-C.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/Compiler/MSVC-CXX.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/Platform/Windows-MSVC-C.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/Platform/Windows-MSVC.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/Platform/Windows.cmake
+D:/softwareinstall/share/cmake-3.16/Modules/Platform/WindowsPaths.cmake

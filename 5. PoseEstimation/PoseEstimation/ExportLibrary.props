@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <LibraryHome>$(SolutionDir)build</LibraryHome>
+    <LibraryName>VIPLPoseEstimation</LibraryName>
+    <LibraryVersion>110</LibraryVersion>
+    <LibraryHeader>VIPLStruct.h VIPLPoseEstimation.h</LibraryHeader>
+    <LibraryCommonFile>readme.txt</LibraryCommonFile>
+    <MacroDefinitions>VIPL_EXPORTS;SEETA_EXPORTS</MacroDefinitions>
+    <PostDog>false</PostDog>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LibraryFinalHome>$(LibraryHome)</LibraryFinalHome>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(PostDog)'=='true' AND '$(ReleaseDog)'=='true'">
+    <LibraryFinalHome>$(LibraryFinalHome)_dog</LibraryFinalHome>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(PostDog)'=='true' AND '$(SimpleLock)'=='true'">
+    <LibraryFinalHome>$(LibraryFinalHome)_sim</LibraryFinalHome>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(PostDog)'=='true' AND '$(TimeLock)'=='true'">
+    <LibraryFinalHome>$(LibraryFinalHome)_$(TimeLockYear)_$(TimeLockMonth)_$(TimeLockDay)</LibraryFinalHome>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(LibraryName)$(LibraryVersion)d</TargetName>
+    <OutDir>$(LibraryFinalHome)\lib\$(PlatformTarget)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(LibraryName)$(LibraryVersion)d</TargetName>
+    <OutDir>$(LibraryFinalHome)\lib\$(PlatformTarget)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(LibraryName)$(LibraryVersion)</TargetName>
+    <OutDir>$(LibraryFinalHome)\lib\$(PlatformTarget)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>$(LibraryName)$(LibraryVersion)</TargetName>
+    <OutDir>$(LibraryFinalHome)\lib\$(PlatformTarget)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(MacroDefinitions)'!=''">
+    <ClCompile>
+      <PreprocessorDefinitions>$(MacroDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="LibraryHome">
+      <Value>$(LibraryHome)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibraryName">
+      <Value>$(LibraryName)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibraryVersion">
+      <Value>$(LibraryVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibraryHeader">
+      <Value>$(LibraryHeader)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibraryCommonFile">
+      <Value>$(LibraryCommonFile)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MacroDefinitions">
+      <Value>$(MacroDefinitions)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PostDog">
+      <Value>$(PostDog)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <PostBuildEvent>
+      <Command>%(Command)
+if not exist "$(LibraryFinalHome)\include" mkdir "$(LibraryFinalHome)\include"
+for %%h in ($(LibraryHeader)) do xcopy /Y %%h "$(LibraryFinalHome)\include"
+xcopy /Y /S include\*h "$(LibraryFinalHome)\include"
+if not exist "$(LibraryFinalHome)" mkdir "$(LibraryFinalHome)"
+for %%f in ($(LibraryCommonFile)) do xcopy /Y %%f "$(LibraryFinalHome)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

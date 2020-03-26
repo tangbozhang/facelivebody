@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="vipnet">
+      <UniqueIdentifier>{79bb04ab-6d0c-400d-9302-02b2e2465ecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vipnet\include">
+      <UniqueIdentifier>{4fdc6915-d967-496b-8097-e3e51f469946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vipnet\include\nets">
+      <UniqueIdentifier>{ccf9c73f-5f4b-41ce-b8ad-9c596875885e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vipnet\include\util">
+      <UniqueIdentifier>{69ade56f-32b8-46da-859e-6738648509d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vipnet\src">
+      <UniqueIdentifier>{8ab9d262-15da-45ce-98e9-0305ba3aad9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vipnet\src\nets">
+      <UniqueIdentifier>{c38e5519-adbd-4c48-a338-344fe4ec8638}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vipnet\src\utils">
+      <UniqueIdentifier>{c04b734d-6e79-45bf-bb8c-afb6546947f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="doc">
+      <UniqueIdentifier>{a8e4e3df-e7c0-47b9-a8b9-f0a4ffdd4b9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="viplnet\include\blob.h">
+      <Filter>vipnet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\hyper_param.h">
+      <Filter>vipnet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\net.h">
+      <Filter>vipnet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\net_factory.h">
+      <Filter>vipnet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\viplnet.h">
+      <Filter>vipnet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\bias_adder_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\bn_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\common_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\conv_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\eltwise_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\eltwise_op_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\inner_product_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\max_pooling_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\pad_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\relu_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\scale_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\shape_index_patch_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\spatial_transform_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\nets\tform_maker_net.h">
+      <Filter>vipnet\include\nets</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\util\log.h">
+      <Filter>vipnet\include\util</Filter>
+    </ClInclude>
+    <ClInclude Include="viplnet\include\util\math_functions.h">
+      <Filter>vipnet\include\util</Filter>
+    </ClInclude>
+    <ClInclude Include="VIPLPointDetector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VIPLStruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetPointDetector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StablePointDetector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VIPLCPointDetector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VIPLMPointDetector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\CStruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\PointDetector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\Struct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\CPointDetector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="viplnet\src\blob.cpp">
+      <Filter>vipnet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\net.cpp">
+      <Filter>vipnet\src</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\bias_adder_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\bn_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\common_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\conv_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\eltwise_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\eltwise_op_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\inner_product_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\max_pooling_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\pad_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\relu_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\scale_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\shape_index_patch_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\spatial_transform_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\nets\tform_maker_net.cpp">
+      <Filter>vipnet\src\nets</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\utils\log.cpp">
+      <Filter>vipnet\src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="viplnet\src\utils\math_functions.cpp">
+      <Filter>vipnet\src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="VIPLPointDetector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetPointDetector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StablePointDetector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VIPLCPointDetector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PointDetector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CPointDetector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt">
+      <Filter>doc</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PointDetector5.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <UseORZCppResources>true</UseORZCppResources>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="UseORZCppResources">
+      <Value>$(UseORZCppResources)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(UseORZCppResources)'=='true'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_ORZ_RESOURCES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>%(Command)
+if not exist orz_resources.orc ( echo # Add every line to the format /url:path.&gt;orz_resources.orc )
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <PropertyGroup>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.0.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.1.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.2.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.3.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.4.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.5.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.6.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.7.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.8.cpp</CommandOutputs>
+    <CommandOutputs>$(CommandOutputs);$(ProjectDir)resources\orz_cpp_resources.9.cpp</CommandOutputs>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(UseORZCppResources)'=='true'">
+    <CustomBuild Include="orz_resources.orc">
+      <FileType>Document</FileType>
+      <Command>orz_resources "%(FullPath)" -cpp --out_dir="$(ProjectDir)resources"</Command>
+      <Message>Compiling resources file %(FullPath)</Message>
+      <Outputs>$(CommandOutputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup Condition="'$(UseORZCppResources)'=='true'">
+    <ClInclude Include="resources\orz_cpp_resources.h" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(UseORZCppResources)'=='true'">
+    <ClCompile Include="resources\orz_cpp_resources.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.0.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.1.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.2.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.3.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.4.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.5.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.6.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.7.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.8.cpp" />
+    <ClCompile Include="resources\orz_cpp_resources.9.cpp" />
+  </ItemGroup>
+</Project>

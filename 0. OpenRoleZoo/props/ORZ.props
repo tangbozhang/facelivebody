@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- option -->
+  <PropertyGroup Label="UserMacros">
+    <ORZHome>$(SolutionDir)OpenRoleZoo</ORZHome>
+    <ORZWithOpenSSL>false</ORZWithOpenSSL>
+    <OpenSSL64Home>$(SEETA3RD_HOME)\OpenSSL64</OpenSSL64Home>
+    <OpenSSL32Home>$(SEETA3RD_HOME)\OpenSSL32</OpenSSL32Home>
+    <OpenSSLDebugFuffix>d</OpenSSLDebugFuffix>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="ORZHome">
+      <Value>$(ORZHome)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ORZWithOpenSSL">
+      <Value>$(ORZWithOpenSSL)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSL64Home">
+      <Value>$(OpenSSL64Home)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSL32Home">
+      <Value>$(OpenSSL32Home)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSLDebugFuffix">
+      <Value>$(OpenSSLDebugFuffix)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  
+  <!-- include orz -->
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ORZHome)\props\include_orz.props" />
+  </ImportGroup>
+</Project>

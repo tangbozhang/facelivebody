@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <ItemGroup>
+    <BuildMacro Include="ORZHome">
+      <Value>$(ORZHome)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <!-- <AdditionalIncludeDirectories>%(ORZHome)\include;%(ORZHome)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories> -->
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Filter Include="io">
+      <UniqueIdentifier>{F3F7B14A-704B-4B3C-8CE1-6E6D180916FE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(ORZHome)\include\orz\io\csv.h"><Filter>io</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\io\dir.h"><Filter>io</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\io\i.h"><Filter>io</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\io\walker.h"><Filter>io</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\io\jug\binary.h"><Filter>io</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\io\jug\jug.h"><Filter>io</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\io\jug\piece.h"><Filter>io</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(ORZHome)\src\orz\io\csv.cpp"><Filter>io</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\io\dir.cpp"><Filter>io</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\io\i.cpp"><Filter>io</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\io\walker.cpp"><Filter>io</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\io\jug\binary.cpp"><Filter>io</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\io\jug\jug.cpp"><Filter>io</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\io\jug\piece.cpp"><Filter>io</Filter></ClCompile>
+  </ItemGroup>
+</Project>

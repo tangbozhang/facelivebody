@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <LibraryHome>$(SolutionDir)build</LibraryHome>
+    <LibraryName>VIPLFaceDetector</LibraryName>
+    <LibraryVersion>510</LibraryVersion>
+    <LibraryLink>true</LibraryLink>
+    <LibraryCopy>true</LibraryCopy>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="LibraryHome">
+      <Value>$(LibraryHome)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibraryName">
+      <Value>$(LibraryName)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibraryVersion">
+      <Value>$(LibraryVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibraryLink">
+      <Value>$(LibraryLink)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibraryCopy">
+      <Value>$(LibraryCopy)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(LibraryHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32' AND '$(LibraryLink)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(LibraryHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(LibraryName)$(LibraryVersion)d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64' AND '$(LibraryLink)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(LibraryHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(LibraryName)$(LibraryVersion)d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32' AND '$(LibraryLink)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(LibraryHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(LibraryName)$(LibraryVersion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64' AND '$(LibraryLink)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(LibraryHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(LibraryName)$(LibraryVersion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32' AND '$(LibraryCopy)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(LibraryHome)\lib\$(PlatformTarget)\$(LibraryName)$(LibraryVersion)d.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64' AND '$(LibraryCopy)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(LibraryHome)\lib\$(PlatformTarget)\$(LibraryName)$(LibraryVersion)d.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32' AND '$(LibraryCopy)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(LibraryHome)\lib\$(PlatformTarget)\$(LibraryName)$(LibraryVersion).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64' AND '$(LibraryCopy)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(LibraryHome)\lib\$(PlatformTarget)\$(LibraryName)$(LibraryVersion).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

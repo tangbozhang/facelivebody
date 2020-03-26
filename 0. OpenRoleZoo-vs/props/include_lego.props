@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <ItemGroup>
+    <BuildMacro Include="ORZHome">
+      <Value>$(ORZHome)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <!-- <AdditionalIncludeDirectories>%(ORZHome)\include;%(ORZHome)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories> -->
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Filter Include="lego">
+      <UniqueIdentifier>{083C6FC8-EF68-4AA8-915A-E95B03DAE0A4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(ORZHome)\include\orz\lego\box.h"><Filter>lego</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\lego\brick.h"><Filter>lego</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(ORZHome)\src\orz\lego\box.cpp"><Filter>lego</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\lego\brick.cpp"><Filter>lego</Filter></ClCompile>
+  </ItemGroup>
+</Project>

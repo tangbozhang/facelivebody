@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{77CBD672-8F2C-41AA-9AC3-AC74F15892DB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SeetaNet</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)build_cpu\lib\$(PlatformTarget)\</OutDir>
+    <TargetName>holidayd</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)build_cpu\lib\$(PlatformTarget)\</OutDir>
+    <TargetName>holidayd</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)build_cpu\lib\$(PlatformTarget)\</OutDir>
+    <TargetName>holiday</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)build_cpu\lib\$(PlatformTarget)\</OutDir>
+    <TargetName>holiday</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SEETANET_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../thirdParty\include\x86;$(SolutionDir)../../thirdParty\include\x86\protobuf;$(SolutionDir)../../thirdParty\include\x86\openblas;$(SolutionDir)../../src;$(SolutionDir)../../src/proto;$(SolutionDir)../../src/include_inner;$(SolutionDir)../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>libprotobufd.lib;libopenblas.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)../../thirdParty/winlib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
+    </CudaCompile>
+    <PostBuildEvent>
+      <Command>%(Command)
+if not exist build_cpu\include mkdir build_cpu\include
+copy /Y ..\..\include\*.h build_cpu\include</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_X64_;_DEBUG;_WINDOWS;_USRDLL;SEETA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../thirdParty\include\x64;$(SolutionDir)../../thirdParty\include\x64\protobuf;$(SolutionDir)../../thirdParty\include\x64\openblas;$(SolutionDir)../../src;$(SolutionDir)../../src/proto;$(SolutionDir)../../src/include_inner;$(SolutionDir)../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)../../thirdParty/winlib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libprotobufd.lib;libopenblas.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+    </CudaCompile>
+    <PostBuildEvent>
+      <Command>%(Command)
+if not exist build_cpu\include mkdir build_cpu\include
+copy /Y ..\..\include\*.h build_cpu\include</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SEETANET_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../thirdParty\include\x86;$(SolutionDir)../../thirdParty\include\x86\protobuf;$(SolutionDir)../../thirdParty\include\x86\openblas;$(SolutionDir)../../src;$(SolutionDir)../../src/proto;$(SolutionDir)../../src/include_inner;$(SolutionDir)../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libprotobuf.lib;libopenblas.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)../../thirdParty/winlib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
+    </CudaCompile>
+    <PostBuildEvent>
+      <Command>%(Command)
+if not exist build_cpu\include mkdir build_cpu\include
+copy /Y ..\..\include\*.h build_cpu\include</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_X64_;NDEBUG;_WINDOWS;_USRDLL;SEETA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../thirdParty\include\x64;$(SolutionDir)../../thirdParty\include\x64\protobuf;$(SolutionDir)../../thirdParty\include\x64\openblas;$(SolutionDir)../../src;$(SolutionDir)../../src/proto;$(SolutionDir)../../src/include_inner;$(SolutionDir)../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)../../thirdParty/winlib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libprotobuf.lib;libopenblas.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+    </CudaCompile>
+    <PostBuildEvent>
+      <Command>%(Command)
+if not exist build_cpu\include mkdir build_cpu\include
+copy /Y ..\..\include\*.h build_cpu\include</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\orz\mem\pot.cpp" />
+    <ClCompile Include="..\..\src\orz\mem\vat.cpp" />
+    <ClCompile Include="..\..\src\orz\sync\canyon.cpp" />
+    <ClCompile Include="..\..\src\orz\sync\cartridge.cpp" />
+    <ClCompile Include="..\..\src\orz\sync\shotgun.cpp" />
+    <ClCompile Include="..\..\src\orz\tools\box.cpp" />
+    <ClCompile Include="..\..\src\simod_gemm.cpp" />
+    <ClCompile Include="..\..\src\HolidayForward.cpp" />
+    <ClCompile Include="..\..\src\HolidayNet.cpp" />
+    <ClCompile Include="..\..\src\im2col.cpp" />
+    <ClCompile Include="..\..\src\proto\HolidayCNN_proto.pb.cc" />
+    <ClCompile Include="..\..\src\ReadFromHolidayLayer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\HolidayForward.h" />
+    <ClInclude Include="..\..\include\HolidayStruct.h" />
+    <ClInclude Include="..\..\include\SeetaStruct.h" />
+    <ClInclude Include="..\..\src\include_inner\except.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayBaseLayer.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayBatchNormalizeGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayBatchNormliseCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayBatchToSpaceNDCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayBatchToSpaceNDGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayBlobCpu.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayBlobGpu.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayCommon.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayCommonCuda.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayCommonfuction.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayConcatCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayConcatGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayConvolutionCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayConvolutionGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayCreateLayerDetailCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayCreateLayerDetailGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayCreateLayerMapCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayCreateLayerMapGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayDeconvolutionCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayDeconvolutionGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayEltwiseCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayEltwiseGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayExpCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayExpGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayFeatureMap.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayInnerproductCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayInnerproductGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayLayerType.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayLocalResponseNormalizeCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayLocalResponseNormalizeGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayMemoryDataLayerCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayMemoryDataLayerGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayNet.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayNetResource.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayPoolingCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayPoolingGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayPoolintGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayPowerCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayPowerGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayPReluCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayPreReluGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayRealMulCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayRealMulGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayReluCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayReluGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayReshapeCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayReshapeGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayScaleCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidayScaleGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidaySigmoidCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidaySigmoidGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidaySoftmaxCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidaySoftmaxGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidaySpaceToBatchNDCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidaySpaceToBatchNDGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidaySplitCPU.h" />
+    <ClInclude Include="..\..\src\include_inner\HolidaySplitGPU.h" />
+    <ClInclude Include="..\..\src\include_inner\im2col.hpp" />
+    <ClInclude Include="..\..\src\include_inner\MacroHoliday.h" />
+    <ClInclude Include="..\..\src\include_inner\MemoryModel.h" />
+    <ClInclude Include="..\..\src\include_inner\memory_stream.h" />
+    <ClInclude Include="..\..\src\include_inner\ReadFromHolidayLayer.h" />
+    <ClInclude Include="..\..\src\include_inner\simod_gemm.h" />
+    <ClInclude Include="..\..\src\orz\mem\pot.h" />
+    <ClInclude Include="..\..\src\orz\mem\vat.h" />
+    <ClInclude Include="..\..\src\orz\sync\canyon.h" />
+    <ClInclude Include="..\..\src\orz\sync\cartridge.h" />
+    <ClInclude Include="..\..\src\orz\sync\shotgun.h" />
+    <ClInclude Include="..\..\src\orz\tools\box.h" />
+    <ClInclude Include="..\..\src\orz\tools\ctxmgr_lite.h" />
+    <ClInclude Include="..\..\src\orz\tools\ctxmgr_lite_support.h" />
+    <ClInclude Include="..\..\src\orz\tools\void_bind.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SeetaNet.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\proto\HolidayCNN_proto.proto" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

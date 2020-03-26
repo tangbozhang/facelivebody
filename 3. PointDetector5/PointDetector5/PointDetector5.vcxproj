@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{21C0F404-893A-42E1-96E8-46A1DE647B5B}</ProjectGuid>
+    <RootNamespace>PointDetector5_19</RootNamespace>
+    <ProjectName>PointDetector5</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="ExportLibrary.props" />
+    <Import Project="WithDog.props" />
+    <Import Project="ExportLibrary.props" />
+    <Import Project="ORZ.props" />
+    <Import Project="SeetaLock.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="ExportLibrary.props" />
+    <Import Project="ExportLibrary.props" />
+    <Import Project="ORZ.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="ExportLibrary.props" />
+    <Import Project="WithDog.props" />
+    <Import Project="ExportLibrary.props" />
+    <Import Project="ORZ.props" />
+    <Import Project="SeetaLock.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="ExportLibrary.props" />
+    <Import Project="ExportLibrary.props" />
+    <Import Project="ORZ.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>D:\RUN-SHITUO-BUSS2.0-face\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\..\..\..\..\..\..\..\..\RUN-SHITUO-BUSSNISS2.0-face</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>VIPL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;include;.;$(ProjectDir)viplnet\include\util;$(ProjectDir)viplnet\include\nets;$(ProjectDir)viplnet\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>VIPL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;include;.;$(ProjectDir)viplnet\include\util;$(ProjectDir)viplnet\include\nets;$(ProjectDir)viplnet\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>D:\codedevelop\tce\SafeVison\LiveBody\源码\主动活体\SDYY 静默配合活体交付源码\Modules\Seeta\lib\$(TargetName).lib</ImportLibrary>
+      <OutputFile>$(OutDir)$(TargetName).dll</OutputFile>
+    </Link>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>VIPL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;include;.;$(ProjectDir)viplnet\include\util;$(ProjectDir)viplnet\include\nets;$(ProjectDir)viplnet\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>VIPL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;include;.;$(ProjectDir)viplnet\include\util;$(ProjectDir)viplnet\include\nets;$(ProjectDir)viplnet\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>D:\codedevelop\tce\SafeVison\LiveBody\源码\时代云英 主动活体 源码交付 2019年10月15日\SDYY 静默配合活体交付源码\1 SDYY 静默配合活体交付源码\Modules\Seeta\lib\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(ORZHome)\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\seeta\CPointDetector.h" />
+    <ClInclude Include="include\seeta\CStruct.h" />
+    <ClInclude Include="include\seeta\PointDetector.h" />
+    <ClInclude Include="include\seeta\Struct.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="NetPointDetector.h" />
+    <ClInclude Include="VIPLCPointDetector.h" />
+    <ClInclude Include="VIPLMPointDetector.h" />
+    <ClInclude Include="viplnet\include\blob.h" />
+    <ClInclude Include="viplnet\include\hyper_param.h" />
+    <ClInclude Include="viplnet\include\net.h" />
+    <ClInclude Include="viplnet\include\nets\bias_adder_net.h" />
+    <ClInclude Include="viplnet\include\nets\bn_net.h" />
+    <ClInclude Include="viplnet\include\nets\common_net.h" />
+    <ClInclude Include="viplnet\include\nets\conv_net.h" />
+    <ClInclude Include="viplnet\include\nets\eltwise_net.h" />
+    <ClInclude Include="viplnet\include\nets\eltwise_op_net.h" />
+    <ClInclude Include="viplnet\include\nets\inner_product_net.h" />
+    <ClInclude Include="viplnet\include\nets\max_pooling_net.h" />
+    <ClInclude Include="viplnet\include\nets\pad_net.h" />
+    <ClInclude Include="viplnet\include\nets\relu_net.h" />
+    <ClInclude Include="viplnet\include\nets\scale_net.h" />
+    <ClInclude Include="viplnet\include\nets\shape_index_patch_net.h" />
+    <ClInclude Include="viplnet\include\nets\spatial_transform_net.h" />
+    <ClInclude Include="viplnet\include\nets\tform_maker_net.h" />
+    <ClInclude Include="viplnet\include\net_factory.h" />
+    <ClInclude Include="viplnet\include\util\log.h" />
+    <ClInclude Include="viplnet\include\util\math_functions.h" />
+    <ClInclude Include="viplnet\include\viplnet.h" />
+    <ClInclude Include="VIPLPointDetector.h" />
+    <ClInclude Include="StablePointDetector.h" />
+    <ClInclude Include="VIPLStruct.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="NetPointDetector.cpp" />
+    <ClCompile Include="src\CPointDetector.cpp" />
+    <ClCompile Include="src\PointDetector.cpp" />
+    <ClCompile Include="VIPLCPointDetector.cpp" />
+    <ClCompile Include="viplnet\src\blob.cpp" />
+    <ClCompile Include="viplnet\src\net.cpp" />
+    <ClCompile Include="viplnet\src\nets\bias_adder_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\bn_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\common_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\conv_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\eltwise_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\eltwise_op_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\inner_product_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\max_pooling_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\pad_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\relu_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\scale_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\shape_index_patch_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\spatial_transform_net.cpp" />
+    <ClCompile Include="viplnet\src\nets\tform_maker_net.cpp" />
+    <ClCompile Include="viplnet\src\utils\log.cpp" />
+    <ClCompile Include="viplnet\src\utils\math_functions.cpp" />
+    <ClCompile Include="VIPLPointDetector.cpp" />
+    <ClCompile Include="StablePointDetector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PointDetector5.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

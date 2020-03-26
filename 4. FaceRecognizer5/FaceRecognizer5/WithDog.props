@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <ReleaseDog>false</ReleaseDog>
+    <TimeLock>false</TimeLock>
+    <TimeLockYear>2018</TimeLockYear>
+    <TimeLockMonth>4</TimeLockMonth>
+    <TimeLockDay>10</TimeLockDay>
+    <CrashModel>false</CrashModel>
+    <SimpleLock>false</SimpleLock>
+    <CryptoHome>$(SEETA3RD_HOME)\SimpleCrypto</CryptoHome>
+    <OpenSSL64Home>$(SEETA3RD_HOME)\OpenSSL64</OpenSSL64Home>
+    <OpenSSL32Home>$(SEETA3RD_HOME)\OpenSSL32</OpenSSL32Home>
+    <OpenSSLDebugFuffix>d</OpenSSLDebugFuffix>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="ReleaseDog">
+      <Value>$(ReleaseDog)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="TimeLock">
+      <Value>$(TimeLock)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="TimeLockYear">
+      <Value>$(TimeLockYear)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="TimeLockMonth">
+      <Value>$(TimeLockMonth)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="TimeLockDay">
+      <Value>$(TimeLockDay)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CrashModel">
+      <Value>$(CrashModel)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="SimpleLock">
+      <Value>$(SimpleLock)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CryptoHome">
+      <Value>$(CryptoHome)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSL64Home">
+      <Value>$(OpenSSL64Home)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSL32Home">
+      <Value>$(OpenSSL32Home)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSLDebugFuffix">
+      <Value>$(OpenSSLDebugFuffix)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemGroup Condition="'$(ReleaseDog)'=='true' OR '$(SimpleLock)'=='true' OR '$(TimeLock)'=='true'">
+    <ClInclude Include="encryption\code\checkit.h" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(ReleaseDog)'=='true' OR '$(SimpleLock)'=='true' OR '$(TimeLock)'=='true'">
+    <ClCompile Include="encryption\code\checkit.cpp" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(ReleaseDog)'=='true' OR '$(SimpleLock)'=='true' OR '$(TimeLock)'=='true'">
+    <WithDogDefintions>NEED_CHECK;$(WithDogDefintions)</WithDogDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(CrashModel)'=='true'">
+    <WithDogDefintions>CRASH_MODEL;$(WithDogDefintions)</WithDogDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ReleaseDog)'=='true'">
+    <WithDogDefintions>RELEASE_DOG;$(WithDogDefintions)</WithDogDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SimpleLock)'=='true'">
+    <WithDogDefintions>SIMPLE_LOCK;$(WithDogDefintions)</WithDogDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TimeLock)'=='true'">
+    <WithDogDefintions>TIME_LOCK;TIME_LOCK_YEAR=$(TimeLockYear);TIME_LOCK_MONTH=$(TimeLockMonth);TIME_LOCK_DAY=$(TimeLockDay);$(WithDogDefintions)</WithDogDefintions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>$(WithDogDefintions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32' AND '$(ReleaseDog)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)encryption\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Sense4ST_md_32_2008.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64' AND '$(ReleaseDog)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)encryption\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Sense4ST_md_64_2008.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32' AND '$(ReleaseDog)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)encryption\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Sense4ST_md_32_2008.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64' AND '$(ReleaseDog)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)encryption\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Sense4ST_md_64_2008.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <PropertyGroup>
+    <CryptoLink>true</CryptoLink>
+    <CryptoCopy>true</CryptoCopy>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(CryptoHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(CryptoLink)'=='true' AND '$(Configuration)'=='Debug' AND '$(SimpleLock)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(CryptoHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>simple_cryptod.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(CryptoLink)'=='true' AND '$(Configuration)'=='Release' AND '$(SimpleLock)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(CryptoHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>simple_crypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(CryptoCopy)'=='true' AND '$(SimpleLock)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <PropertyGroup>
+    <OpenSSLLink>true</OpenSSLLink>
+    <OpenSSLCopy>true</OpenSSLCopy>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='Win32'">
+    <OpenSSLHome>$(OpenSSL32Home)</OpenSSLHome>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+    <OpenSSLHome>$(OpenSSL64Home)</OpenSSLHome>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OpenSSLHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLLink)'=='true' AND '$(Configuration)'=='Debug' AND '$(SimpleLock)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(OpenSSLHome)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32$(OpenSSLDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ssleay32$(OpenSSLDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLLink)'=='true' AND '$(Configuration)'=='Release' AND '$(SimpleLock)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(OpenSSLHome)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLCopy)'=='true' AND '$(Configuration)'=='Debug' AND '$(SimpleLock)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(OpenSSLHome)\bin\libeay32$(OpenSSLDebugFuffix).dll" "$(OutDir)"
+copy /Y "$(OpenSSLHome)\bin\ssleay32$(OpenSSLDebugFuffix).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLCopy)'=='true' AND '$(Configuration)'=='Release' AND '$(SimpleLock)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(OpenSSLHome)\bin\libeay32.dll" "$(OutDir)"
+copy /Y "$(OpenSSLHome)\bin\ssleay32.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

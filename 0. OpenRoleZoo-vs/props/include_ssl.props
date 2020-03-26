@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <ItemGroup>
+    <BuildMacro Include="ORZHome">
+      <Value>$(ORZHome)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <!-- <AdditionalIncludeDirectories>%(ORZHome)\include;%(ORZHome)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories> -->
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Filter Include="ssl">
+      <UniqueIdentifier>{96A560EA-96F6-4C0C-9EBF-EE2EDBE6E79C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(ORZHome)\include\orz\ssl\aes.h"><Filter>ssl</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\ssl\rsa.h"><Filter>ssl</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(ORZHome)\src\orz\ssl\aes.cpp"><Filter>ssl</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\ssl\rsa.cpp"><Filter>ssl</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\ssl\import_ssl.cpp"><Filter>ssl</Filter></ClCompile>
+  </ItemGroup>
+</Project>

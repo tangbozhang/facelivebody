@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{58BFFBD7-F4F4-3563-BAF3-EDEAD5E6CF47}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ORZ_STATIC</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ORZ_STATIC.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ORZ_static</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ORZ_STATIC.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ORZ_static</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">ORZ_STATIC.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">ORZ_static</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\TR\Desktop\0.OpenRoleZoo\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">ORZ_STATIC.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">ORZ_static</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;ORZ_SOLUTION_DIR="C:/Users/TR/Desktop/0.OpenRoleZoo";CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ORZ_SOLUTION_DIR=\"C:/Users/TR/Desktop/0.OpenRoleZoo\";CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\include;C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\include;C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ORZ_SOLUTION_DIR="C:/Users/TR/Desktop/0.OpenRoleZoo";CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ORZ_SOLUTION_DIR=\"C:/Users/TR/Desktop/0.OpenRoleZoo\";CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\include;C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\include;C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ORZ_SOLUTION_DIR="C:/Users/TR/Desktop/0.OpenRoleZoo";CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ORZ_SOLUTION_DIR=\"C:/Users/TR/Desktop/0.OpenRoleZoo\";CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\include;C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\include;C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ORZ_SOLUTION_DIR="C:/Users/TR/Desktop/0.OpenRoleZoo";CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ORZ_SOLUTION_DIR=\"C:/Users/TR/Desktop/0.OpenRoleZoo\";CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\include;C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\include;C:\Users\TR\Desktop\0.OpenRoleZoo\src\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\TR\Desktop\0.OpenRoleZoo-vs\ZERO_CHECK.vcxproj">
+      <Project>{0C1A8E9D-7C1F-3067-A085-5797E0CB870C}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\orz\codec\base64.h" />
+    <ClInclude Include="..\include\orz\codec\json.h" />
+    <ClInclude Include="..\include\orz\io\csv.h" />
+    <ClInclude Include="..\include\orz\io\dir.h" />
+    <ClInclude Include="..\include\orz\io\i.h" />
+    <ClInclude Include="..\include\orz\io\jug\binary.h" />
+    <ClInclude Include="..\include\orz\io\jug\jug.h" />
+    <ClInclude Include="..\include\orz\io\jug\piece.h" />
+    <ClInclude Include="..\include\orz\io\walker.h" />
+    <ClInclude Include="..\include\orz\lego\box.h" />
+    <ClInclude Include="..\include\orz\lego\brick.h" />
+    <ClInclude Include="..\include\orz\mem\need.h" />
+    <ClInclude Include="..\include\orz\mem\pot.h" />
+    <ClInclude Include="..\include\orz\mem\vat.h" />
+    <ClInclude Include="..\include\orz\net\http.h" />
+    <ClInclude Include="..\include\orz\ssl\aes.h" />
+    <ClInclude Include="..\include\orz\ssl\rsa.h" />
+    <ClInclude Include="..\include\orz\sync\backend.h" />
+    <ClInclude Include="..\include\orz\sync\canyon.h" />
+    <ClInclude Include="..\include\orz\sync\cartridge.h" />
+    <ClInclude Include="..\include\orz\sync\shotgun.h" />
+    <ClInclude Include="..\include\orz\tools\cpp_resources.h" />
+    <ClInclude Include="..\include\orz\tools\ctxmgr_lite.h" />
+    <ClInclude Include="..\include\orz\tools\ctxmgr_lite_support.h" />
+    <ClInclude Include="..\include\orz\tools\fps.h" />
+    <ClInclude Include="..\include\orz\tools\function.h" />
+    <ClInclude Include="..\include\orz\tools\gun_with.h" />
+    <ClInclude Include="..\include\orz\tools\limit.h" />
+    <ClInclude Include="..\include\orz\tools\multi.h" />
+    <ClInclude Include="..\include\orz\tools\option.h" />
+    <ClInclude Include="..\include\orz\tools\progress_bar.h" />
+    <ClInclude Include="..\include\orz\tools\range.h" />
+    <ClInclude Include="..\include\orz\tools\resources.h" />
+    <ClInclude Include="..\include\orz\tools\timer.h" />
+    <ClInclude Include="..\include\orz\tools\void_bind.h" />
+    <ClInclude Include="..\include\orz\utils\api.h" />
+    <ClInclude Include="..\include\orz\utils\except.h" />
+    <ClInclude Include="..\include\orz\utils\format.h" />
+    <ClInclude Include="..\include\orz\utils\log.h" />
+    <ClInclude Include="..\include\orz\utils\platform.h" />
+    <ClInclude Include="..\include\orz\utils\random.h" />
+    <ClInclude Include="orz\codec\json_iterator.h" />
+    <ClInclude Include="orz\net\http_linux.h" />
+    <ClInclude Include="orz\net\http_win.h" />
+    <ClInclude Include="orz\tools\hash_table.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="orz\codec\base64.cpp" />
+    <ClCompile Include="orz\codec\json.cpp" />
+    <ClCompile Include="orz\io\csv.cpp" />
+    <ClCompile Include="orz\io\dir.cpp" />
+    <ClCompile Include="orz\io\i.cpp" />
+    <ClCompile Include="orz\io\jug\binary.cpp" />
+    <ClCompile Include="orz\io\jug\jug.cpp" />
+    <ClCompile Include="orz\io\jug\piece.cpp" />
+    <ClCompile Include="orz\io\walker.cpp" />
+    <ClCompile Include="orz\lego\box.cpp" />
+    <ClCompile Include="orz\lego\brick.cpp" />
+    <ClCompile Include="orz\mem\need.cpp" />
+    <ClCompile Include="orz\mem\pot.cpp" />
+    <ClCompile Include="orz\mem\vat.cpp" />
+    <ClCompile Include="orz\net\http.cpp" />
+    <ClCompile Include="orz\ssl\aes.cpp" />
+    <ClCompile Include="orz\ssl\import_ssl.cpp" />
+    <ClCompile Include="orz\ssl\rsa.cpp" />
+    <ClCompile Include="orz\sync\backend.cpp" />
+    <ClCompile Include="orz\sync\canyon.cpp" />
+    <ClCompile Include="orz\sync\cartridge.cpp" />
+    <ClCompile Include="orz\sync\shotgun.cpp" />
+    <ClCompile Include="orz\tools\cpp_resources.cpp" />
+    <ClCompile Include="orz\tools\fps.cpp" />
+    <ClCompile Include="orz\tools\limit.cpp" />
+    <ClCompile Include="orz\tools\option.cpp" />
+    <ClCompile Include="orz\tools\progress_bar.cpp" />
+    <ClCompile Include="orz\tools\range.cpp" />
+    <ClCompile Include="orz\tools\resources.cpp" />
+    <ClCompile Include="orz\utils\api.cpp" />
+    <ClCompile Include="orz\utils\except.cpp" />
+    <ClCompile Include="orz\utils\format.cpp" />
+    <ClCompile Include="orz\utils\log.cpp" />
+    <ClCompile Include="orz\utils\platform.cpp" />
+    <ClCompile Include="orz\utils\random.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <EyeBlinkDetectorHome>$(SEETASDK_HOME)\EBDv130</EyeBlinkDetectorHome>
+    <EyeBlinkDetectorName>VIPLEyeBlinkDetector</EyeBlinkDetectorName>
+    <EyeBlinkDetectorVersion>130</EyeBlinkDetectorVersion>
+    <EyeBlinkDetectorDebugFuffix>d</EyeBlinkDetectorDebugFuffix>
+    <EyeBlinkDetectorLink>true</EyeBlinkDetectorLink>
+    <EyeBlinkDetectorCopy>true</EyeBlinkDetectorCopy>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="EyeBlinkDetectorHome">
+      <Value>$(EyeBlinkDetectorHome)</Value>
+    </BuildMacro>
+    <BuildMacro Include="EyeBlinkDetectorName">
+      <Value>$(EyeBlinkDetectorName)</Value>
+    </BuildMacro>
+    <BuildMacro Include="EyeBlinkDetectorVersion">
+      <Value>$(EyeBlinkDetectorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="EyeBlinkDetectorDebugFuffix">
+      <Value>$(EyeBlinkDetectorDebugFuffix)</Value>
+    </BuildMacro>
+    <BuildMacro Include="EyeBlinkDetectorLink">
+      <Value>$(EyeBlinkDetectorLink)</Value>
+    </BuildMacro>
+    <BuildMacro Include="EyeBlinkDetectorCopy">
+      <Value>$(EyeBlinkDetectorCopy)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(EyeBlinkDetectorHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(EyeBlinkDetectorLink)'=='true' AND '$(Configuration)'=='Debug'">
+    <Link>
+      <AdditionalLibraryDirectories>$(EyeBlinkDetectorHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(EyeBlinkDetectorName)$(EyeBlinkDetectorVersion)$(EyeBlinkDetectorDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(EyeBlinkDetectorLink)'=='true' AND '$(Configuration)'=='Release'">
+    <Link>
+      <AdditionalLibraryDirectories>$(EyeBlinkDetectorHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(EyeBlinkDetectorName)$(EyeBlinkDetectorVersion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(EyeBlinkDetectorCopy)'=='true' AND '$(Configuration)'=='Debug'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(EyeBlinkDetectorHome)\lib\$(PlatformTarget)\$(EyeBlinkDetectorName)$(EyeBlinkDetectorVersion)$(EyeBlinkDetectorDebugFuffix).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(EyeBlinkDetectorCopy)'=='true' AND '$(Configuration)'=='Release'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(EyeBlinkDetectorHome)\lib\$(PlatformTarget)\$(EyeBlinkDetectorName)$(EyeBlinkDetectorVersion).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

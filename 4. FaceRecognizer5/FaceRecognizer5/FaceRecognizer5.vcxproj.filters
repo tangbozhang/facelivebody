@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="seeta">
+      <UniqueIdentifier>{b7d43aeb-90ea-4d48-86c2-668246f61b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="doc">
+      <UniqueIdentifier>{182852ef-a763-49f9-ad2e-71612c262efc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VIPLFaceRecognizer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="seeta\common_alignment.cpp">
+      <Filter>seeta</Filter>
+    </ClCompile>
+    <ClCompile Include="VIPLCFaceRecognizer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="seeta\ImageProcess.cpp">
+      <Filter>seeta</Filter>
+    </ClCompile>
+    <ClCompile Include="seeta\graphics2d.cpp">
+      <Filter>seeta</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFaceRecognizer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FaceRecognizer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFaceDatabase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FaceDatabase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VIPLFaceRecognizer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\common_alignment.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SeetaModelHeader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VIPLCFaceRecognizer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VIPLCStruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\CommonStruct.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\CStruct.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\DataHelper.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\ForwardNet.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\ImageProcess.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\Struct.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\graphics2d.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\CFaceRecognizer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\CStruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\FaceRecognizer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\Struct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\CFaceDatabase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\FaceDatabase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\CStream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seeta\Stream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mutex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt">
+      <Filter>doc</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FaceRecognizer5.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

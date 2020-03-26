@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="seeta">
+      <UniqueIdentifier>{b7d43aeb-90ea-4d48-86c2-668246f61b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="doc">
+      <UniqueIdentifier>{182852ef-a763-49f9-ad2e-71612c262efc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="orz">
+      <UniqueIdentifier>{d21a1e07-8d90-4d32-90ab-10b3a67f2893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="orz\io">
+      <UniqueIdentifier>{f2936577-a746-4e51-a1d2-f67b6279923e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="orz\io\jug">
+      <UniqueIdentifier>{5d4a1861-9183-4d2f-a7cb-1bbbbc90950e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="orz\utils">
+      <UniqueIdentifier>{9f6469bb-2919-4137-9fe9-acd561269299}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VIPLFaceRecognizer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="seeta\common_alignment.cpp">
+      <Filter>seeta</Filter>
+    </ClCompile>
+    <ClCompile Include="orz\io\jug\jug.cpp">
+      <Filter>orz\io\jug</Filter>
+    </ClCompile>
+    <ClCompile Include="orz\io\jug\piece.cpp">
+      <Filter>orz\io\jug</Filter>
+    </ClCompile>
+    <ClCompile Include="orz\utils\except.cpp">
+      <Filter>orz\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="orz\utils\platform.cpp">
+      <Filter>orz\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="orz\utils\log.cpp">
+      <Filter>orz\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="orz\utils\format.cpp">
+      <Filter>orz\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VIPLFaceRecognizer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="seeta\common_alignment.h">
+      <Filter>seeta</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SeetaModelHeader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="orz\io\jug\jug.h">
+      <Filter>orz\io\jug</Filter>
+    </ClInclude>
+    <ClInclude Include="orz\io\jug\piece.h">
+      <Filter>orz\io\jug</Filter>
+    </ClInclude>
+    <ClInclude Include="orz\utils\except.h">
+      <Filter>orz\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="orz\utils\platform.h">
+      <Filter>orz\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="orz\utils\log.h">
+      <Filter>orz\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="orz\utils\format.h">
+      <Filter>orz\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt">
+      <Filter>doc</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FaceRecognizer5.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

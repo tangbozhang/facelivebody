@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <ItemGroup>
+    <BuildMacro Include="ORZHome">
+      <Value>$(ORZHome)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <!-- <AdditionalIncludeDirectories>%(ORZHome)\include;%(ORZHome)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories> -->
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Filter Include="mem">
+      <UniqueIdentifier>{87359F2E-5B8A-4C06-86C6-FB5823257F43}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(ORZHome)\include\orz\mem\need.h"><Filter>mem</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\mem\pot.h"><Filter>mem</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\mem\vat.h"><Filter>mem</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(ORZHome)\src\orz\mem\need.cpp"><Filter>mem</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\mem\pot.cpp"><Filter>mem</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\mem\vat.cpp"><Filter>mem</Filter></ClCompile>
+  </ItemGroup>
+</Project>

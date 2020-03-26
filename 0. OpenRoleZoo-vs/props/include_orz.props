@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros" Condition="'$(ORZHome)'==''">
+    <ORZHome>$(SolutionDir)OpenRoleZoo</ORZHome>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(ORZWithOpenSSL)'==''">
+    <ORZWithOpenSSL>true</ORZWithOpenSSL>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(OpenSSL64Home)'==''">
+    <OpenSSL64Home>$(SEETA3RD_HOME)\OpenSSL64</OpenSSL64Home>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(OpenSSL32Home)'==''">
+    <OpenSSL32Home>$(SEETA3RD_HOME)\OpenSSL32</OpenSSL32Home>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(OpenSSLDebugFuffix)'==''">
+    <OpenSSLDebugFuffix>d</OpenSSLDebugFuffix>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="ORZHome">
+      <Value>$(ORZHome)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ORZWithOpenSSL">
+      <Value>$(ORZWithOpenSSL)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSL64Home">
+      <Value>$(OpenSSL64Home)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSL32Home">
+      <Value>$(OpenSSL32Home)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSLDebugFuffix">
+      <Value>$(OpenSSLDebugFuffix)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  
+  <!-- load modules -->
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ORZHome)\props\include_codec.props" />
+    <Import Project="$(ORZHome)\props\include_io.props" />
+    <Import Project="$(ORZHome)\props\include_lego.props" />
+    <Import Project="$(ORZHome)\props\include_mem.props" />
+    <Import Project="$(ORZHome)\props\include_net.props" />
+    <Import Project="$(ORZHome)\props\include_sync.props" />
+    <Import Project="$(ORZHome)\props\include_tools.props" />
+    <Import Project="$(ORZHome)\props\include_utils.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(ORZWithOpenSSL)'=='true'">
+    <Import Project="$(ORZHome)\props\include_ssl.props" />
+  </ImportGroup>
+  <PropertyGroup />
+
+  <!-- global header dir -->
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ORZHome)\include;$(ORZHome)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <!-- Add preprocedd definetions -->
+  <PropertyGroup>
+    <!-- <ORZDefintions>ORZ_SOLUTION_DIR=R"($(SolutionDir))";$(ORZDefintions)</ORZDefintions> -->
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ORZWithOpenSSL)'=='true'">
+    <ORZDefintions>ORZ_WITH_OPENSSL;$(ORZDefintions)</ORZDefintions>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>$(ORZDefintions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <!-- wininet for http support -->
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <!-- Include OpenSSL -->
+  <PropertyGroup>
+    <OpenSSLLink>true</OpenSSLLink>
+    <OpenSSLCopy>true</OpenSSLCopy>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='Win32'">
+    <OpenSSLHome>$(OpenSSL32Home)</OpenSSLHome>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+    <OpenSSLHome>$(OpenSSL64Home)</OpenSSLHome>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(ORZWithOpenSSL)'=='true'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OpenSSLHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLLink)'=='true' AND '$(Configuration)'=='Debug' AND '$(ORZWithOpenSSL)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(OpenSSLHome)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32$(OpenSSLDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ssleay32$(OpenSSLDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLLink)'=='true' AND '$(Configuration)'=='Release' AND '$(ORZWithOpenSSL)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(OpenSSLHome)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLCopy)'=='true' AND '$(Configuration)'=='Debug' AND '$(ORZWithOpenSSL)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(OpenSSLHome)\bin\libeay32$(OpenSSLDebugFuffix).dll" "$(OutDir)"
+copy /Y "$(OpenSSLHome)\bin\ssleay32$(OpenSSLDebugFuffix).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLCopy)'=='true' AND '$(Configuration)'=='Release' AND '$(ORZWithOpenSSL)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(OpenSSLHome)\bin\libeay32.dll" "$(OutDir)"
+copy /Y "$(OpenSSLHome)\bin\ssleay32.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

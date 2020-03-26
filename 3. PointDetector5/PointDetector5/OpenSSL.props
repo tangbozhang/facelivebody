@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <OpenSSL64Home>$(SEETA3RD_HOME)\OpenSSL64</OpenSSL64Home>
+    <OpenSSL32Home>$(SEETA3RD_HOME)\OpenSSL32</OpenSSL32Home>
+    <OpenSSLDebugFuffix>d</OpenSSLDebugFuffix>
+    <OpenSSLLink>true</OpenSSLLink>
+    <OpenSSLCopy>true</OpenSSLCopy>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="OpenSSL64Home">
+      <Value>$(OpenSSL64Home)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSL32Home">
+      <Value>$(OpenSSL32Home)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSLDebugFuffix">
+      <Value>$(OpenSSLDebugFuffix)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSLLink">
+      <Value>$(OpenSSLLink)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OpenSSLCopy">
+      <Value>$(OpenSSLCopy)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Platform)'=='Win32'">
+    <OpenSSLHome>$(OpenSSL32Home)</OpenSSLHome>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+    <OpenSSLHome>$(OpenSSL64Home)</OpenSSLHome>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OpenSSLHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(OpenSSLLink)'=='true' AND '$(Configuration)'=='Debug'">
+    <Link>
+      <AdditionalLibraryDirectories>$(OpenSSLHome)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32$(OpenSSLDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ssleay32$(OpenSSLDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(OpenSSLLink)'=='true' AND '$(Configuration)'=='Release'">
+    <Link>
+      <AdditionalLibraryDirectories>$(OpenSSLHome)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLCopy)'=='true' AND '$(Configuration)'=='Debug'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(OpenSSLHome)\bin\libeay32$(OpenSSLDebugFuffix).dll" "$(OutDir)"
+copy /Y "$(OpenSSLHome)\bin\ssleay32$(OpenSSLDebugFuffix).dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(OpenSSLCopy)'=='true' AND '$(Configuration)'=='Release'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(OpenSSLHome)\bin\libeay32.dll" "$(OutDir)"
+copy /Y "$(OpenSSLHome)\bin\ssleay32.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <ItemGroup>
+    <BuildMacro Include="ORZHome">
+      <Value>$(ORZHome)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <!-- <AdditionalIncludeDirectories>%(ORZHome)\include;%(ORZHome)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories> -->
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Filter Include="sync">
+      <UniqueIdentifier>{707033C9-A34F-4364-BEC1-9AF78FE1A340}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(ORZHome)\include\orz\sync\canyon.h"><Filter>sync</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\sync\cartridge.h"><Filter>sync</Filter></ClInclude>
+    <ClInclude Include="$(ORZHome)\include\orz\sync\shotgun.h"><Filter>sync</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(ORZHome)\src\orz\sync\canyon.cpp"><Filter>sync</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\sync\cartridge.cpp"><Filter>sync</Filter></ClCompile>
+    <ClCompile Include="$(ORZHome)\src\orz\sync\shotgun.cpp"><Filter>sync</Filter></ClCompile>
+  </ItemGroup>
+</Project>

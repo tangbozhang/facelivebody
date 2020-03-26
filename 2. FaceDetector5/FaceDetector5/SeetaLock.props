@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- option -->
+  <PropertyGroup Label="UserMacros">
+    <SeetaLockHome>$(SEETA_LOCAL)</SeetaLockHome>
+    <SeetaLockDebugFuffix>d</SeetaLockDebugFuffix>
+    <SeetaLockSDKOnline>false</SeetaLockSDKOnline>
+    <SeetaLockSDKLocal>false</SeetaLockSDKLocal>
+    <SeetaLockModel>false</SeetaLockModel>
+    <SeetaLockKey>XJ37DUTJ</SeetaLockKey>
+    <SeetaLockAbility>1001</SeetaLockAbility>
+    <SeetaLockFuncID>1001</SeetaLockFuncID>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="SeetaLockHome">
+      <Value>$(SeetaLockHome)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaLockDebugFuffix">
+      <Value>$(SeetaLockDebugFuffix)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaLockSDKOnline">
+      <Value>$(SeetaLockSDKOnline)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaLockSDKLocal">
+      <Value>$(SeetaLockSDKLocal)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaLockModel">
+      <Value>$(SeetaLockModel)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaLockKey">
+      <Value>$(SeetaLockKey)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaLockAbility">
+      <Value>$(SeetaLockAbility)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaLockFuncID">
+      <Value>$(SeetaLockFuncID)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(SeetaLockSDKOnline)'=='true' OR '$(SeetaLockSDKLocal)'=='true' OR '$(SeetaLockModel)'=='true'">
+    <SeetaLockDefintions>SEETA_LOCK_SDK;$(SeetaLockDefintions)</SeetaLockDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SeetaLockSDKOnline)'=='true'">
+    <SeetaLockDefintions>SEETA_LOCK_SDK_ONLINE;$(SeetaLockDefintions)</SeetaLockDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SeetaLockSDKLocal)'=='true'">
+    <SeetaLockDefintions>SEETA_LOCK_SDK_LOCAL;$(SeetaLockDefintions)</SeetaLockDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SeetaLockModel)'=='true'">
+    <SeetaLockDefintions>SEETA_LOCK_MODEL;$(SeetaLockDefintions)</SeetaLockDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SeetaLockKey)'!=''">
+    <SeetaLockDefintions>SEETA_LOCK_KEY=$(SeetaLockKey);$(SeetaLockDefintions)</SeetaLockDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SeetaLockAbility)'!=''">
+    <SeetaLockDefintions>SEETA_LOCK_ABILITY=$(SeetaLockAbility);$(SeetaLockDefintions)</SeetaLockDefintions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SeetaLockFuncID)'!=''">
+    <SeetaLockDefintions>SEETA_LOCK_FINCID=$(SeetaLockFuncID);$(SeetaLockDefintions)</SeetaLockDefintions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>$(SeetaLockDefintions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <!-- include OpenSSL.props -->
+  <ImportGroup Label="PropertySheets" Condition="'$(SeetaLockSDKOnline)'=='true' OR '$(SeetaLockModel)'=='true'">
+    <Import Project="OpenSSL.props" />
+  </ImportGroup>
+  <!-- include SeetaLock -->
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SeetaLockHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SeetaLockHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SeetaLock_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SeetaLockHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SeetaLock_static$(SeetaLockDebugFuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

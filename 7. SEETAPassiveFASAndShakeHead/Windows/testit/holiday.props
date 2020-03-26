@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <SeetaNetHome>D:\soft-develop-environment\SeetaBussinessLive</SeetaNetHome>
+    <SeetaNetLink>true</SeetaNetLink>
+    <SeetaNetCopy>true</SeetaNetCopy>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="SeetaNetHome">
+      <Value>$(SeetaNetHome)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaNetLink">
+      <Value>$(SeetaNetLink)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SeetaNetCopy">
+      <Value>$(SeetaNetCopy)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SeetaNetHome)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32' AND '$(SeetaNetLink)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SeetaNetHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>holidayd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64' AND '$(SeetaNetLink)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>D:\codedevelop\tce\SafeVison\LiveBody\源码\主动活体\SDYY 静默配合活体交付源码\Modules\Seeta\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>holidayd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32' AND '$(SeetaNetLink)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SeetaNetHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>holiday.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64' AND '$(SeetaNetLink)'=='true'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SeetaNetHome)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>holiday.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32' AND '$(SeetaNetCopy)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\holidayd.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libgcc_s_sjlj-1.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libgfortran-3.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libopenblas.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libquadmath-0.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64' AND '$(SeetaNetCopy)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\holidayd.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libgcc_s_sjlj-1.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libgfortran-3.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libopenblas.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libquadmath-0.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32' AND '$(SeetaNetCopy)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\holiday.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libgcc_s_sjlj-1.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libgfortran-3.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libopenblas.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libquadmath-0.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64' AND '$(SeetaNetCopy)'=='true'">
+    <PostBuildEvent>
+      <Command>%(Command)
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\holiday.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libgcc_s_sjlj-1.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libgfortran-3.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libopenblas.dll" "$(OutDir)"
+copy /Y "$(SeetaNetHome)\lib\$(PlatformTarget)\libquadmath-0.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

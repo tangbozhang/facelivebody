@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <UseORZResources>true</UseORZResources>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="UseORZResources">
+      <Value>$(UseORZResources)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(UseORZResources)'=='true'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_ORZ_RESOURCES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>%(Command)
+if not exist orz_resources.orc ( echo # Add every line to the format /url:path.&gt;orz_resources.orc )
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup Condition="'$(UseORZResources)'=='true'">
+    <CustomBuild Include="orz_resources.orc">
+      <FileType>Document</FileType>
+      <Command>orz_resources "%(FullPath)" --out_dir="%(ProjectDir)resources"</Command>
+      <Message>Compiling resources file %(FullPath)</Message>
+      <Outputs>%(ProjectDir)resources\orz_resources.c</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup Condition="'$(UseORZResources)'=='true'">
+    <ClInclude Include="resources\orz_resources.h" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(UseORZResources)'=='true'">
+    <ClCompile Include="resources\orz_resources.c" />
+  </ItemGroup>
+</Project>
